@@ -22,8 +22,9 @@ def ESummary(db: str, UIDs: list[int]):
         root = ET.fromstring(r.text)
         # parse XML for desired data
         print(f"ROOT TAG: {root.tag}")
-        # for child in root:
-        #     print(f"> CHILD TAG: {child.tag}")
+        print(f"> CHILD TAG: {root[0].tag}")
+        print(f">> G-CHILD TAG: {root[0][0].tag}")
+        print(f">> G-CHILD TEXT: {root[0][0].text}")
     else:
         print(f"Response not OK. Status code: {r.status_code}\n")
     
